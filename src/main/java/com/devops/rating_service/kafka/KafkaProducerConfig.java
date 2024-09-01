@@ -30,7 +30,6 @@ public class KafkaProducerConfig {
         return new DefaultKafkaProducerFactory<>(configProps, new StringSerializer(), new JsonSerializer<>());
     }
 
-
     @Bean
     KafkaTemplate<String, Serializable> jsonKafkaTemplate(ProducerFactory<String, Serializable> jsonProducerFactory) {
         return new KafkaTemplate<>(jsonProducerFactory);

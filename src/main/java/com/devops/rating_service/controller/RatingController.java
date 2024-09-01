@@ -10,10 +10,13 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/rating")
-@RequiredArgsConstructor
 public class RatingController {
 
     private final RatingService ratingService;
+
+    public RatingController(RatingService ratingService) {
+        this.ratingService = ratingService;
+    }
 
     @GetMapping("/{id}")
     public Rating getRatingById(@PathVariable UUID id){
