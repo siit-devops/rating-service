@@ -20,6 +20,18 @@ public class RatingController {
         return ratingService.getById(id);
     }
 
+    @GetMapping("/host")
+    //@HasRole("GUEST")
+    public Rating getRatingByHostId(@RequestParam UUID hostId, UUID userId){
+        return ratingService.getRatingForHost(hostId, userId);
+    }
+
+    @GetMapping("/accomodation")
+    //@HasRole("GUEST")
+    public Rating getRatingByAccommodationId(@RequestParam UUID accommodationId, UUID userId){
+        return ratingService.getRatingForAccommodation(accommodationId, userId);
+    }
+
     @PostMapping
     //@HasRole("GUEST")
     public Rating addRating(@RequestBody Rating newRating, UUID userId) {
