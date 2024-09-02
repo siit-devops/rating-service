@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -15,4 +16,8 @@ public interface RatingRepository extends JpaRepository<Rating, UUID> {
 
     @Query("select r from Rating r where r.active = true and r.hostRating = false and r.subjectId = ?1")
     List<Rating> findAllAccommodationRatings(UUID accommodationId);
+
+    Optional<Rating> findRatingByHostRatingTrueAndGuestIdAndSubjectId(UUID guestId, UUID subjectId);
+
+    Optional<Rating> findRatingByHostRatingFalseAndGuestIdAndSubjectId(UUID guestId, UUID subjectId);
 }
