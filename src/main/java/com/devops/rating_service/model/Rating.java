@@ -22,7 +22,7 @@ public class Rating {
     private UUID guestId;
     private Boolean hostRating;
     private UUID subjectId;
-    private Byte ratingValue;
+    private int ratingValue;
     private LocalDateTime createdAt;
     private String description;
     private Boolean active;
