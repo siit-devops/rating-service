@@ -12,6 +12,6 @@ public interface ReservationClient {
     @GetMapping("/api/internal/reservations/has-previous/{userId}")
     boolean checkIfUserHasReservation(@PathVariable String userId, @RequestParam String hostId);
 
-    @GetMapping("/api/internal/reservations/stayed/{userId}}")
-    boolean userStayedAtAccommodation(@PathVariable String userId, @RequestParam String accommodationId);
+    @GetMapping("/api/internal/reservations/stayed/{userId}")
+    boolean userStayedAtAccommodation(@PathVariable String userId, @RequestParam String accomodationId);
 }
